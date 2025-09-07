@@ -25,7 +25,7 @@
 <nav class="navbar">
   <div class="navbarContainer container">
     <a href="/">
-      <div class="navbar__logo">
+      <div class="navbar__logo logo">
         <img src={logo} alt="GMills Web Development logo" />
       </div>
     </a>
@@ -90,7 +90,7 @@
     font-weight: bold;
     color: var(--colour-primary);
     img {
-      width: 6rem;
+      width: 9rem;
       height: auto;
     }
   }

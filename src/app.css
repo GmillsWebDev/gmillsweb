@@ -22,6 +22,11 @@ body{
     color: var(--colour-white);
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 p, a, li, span, div{
     color: var(--colour-white);
     font-family: "Fira Code", monospace;

@@ -1,40 +1,49 @@
 <script>
         let year = new Date().getFullYear();
+        import logo from "$lib/assets/images/branding/GMW_Logo.webp";
 </script>
 
 <footer>
-    
-<div class="container-full">
-<svg class="borderwave" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1800" height="250" preserveAspectRatio="none" viewBox="0 0 1800 250">
-    <g mask="url(&quot;#SvgjsMask1075&quot;)" fill="none">
-        <rect width="1800" height="250" x="0" y="0" fill="rgba(0, 4, 32, 1)"></rect>
-        <path d="M 0,31 C 120,57.4 360,150.8 600,163 C 840,175.2 960,95.2 1200,92 C 1440,88.8 1680,136 1800,147L1800 250L0 250z" fill="rgba(33, 94, 88, 1)"></path>
+<svg class="borderwave" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" width="1800" height="75" preserveAspectRatio="none" viewBox="0 0 1800 75">
+    <g mask="url(&quot;#SvgjsMask1109&quot;)" fill="none">
+        <path d="M 0,67 C 120,56.6 360,20 600,15 C 840,10 960,45 1200,42 C 1440,39 1680,8.4 1800,0L1800 75L0 75z" fill="rgba(33, 94, 88, 1)"></path>
     </g>
     <defs>
-        <mask id="SvgjsMask1075">
-            <rect width="1800" height="250" fill="#ffffff"></rect>
+        <mask id="SvgjsMask1109">
+            <rect width="1800" height="75" fill="#ffffff"></rect>
         </mask>
     </defs>
 </svg>
+<div class="container-full footer">
 <div class="container">
-    <p>© {year} - G Mills Web</p>
+    <div class="links">
+        <p>© {year} - G Mills Web</p>
     <div class="footer-links">
         <a href="/privacy-policy">Privacy Policy</a>
         <a href="/terms-and-conditions">Terms & Conditions</a>
         <a href="/contact">Contact</a>
+    </div>
+    </div>
+    <div class="logo">
+        <img src={logo} alt="GMills Web Development logo" />
     </div>
 </div>
 </div>
 </footer>
 
 <style>
-    footer{
+    .footer{
         background: var(--colour-secondary);
         padding-bottom: 2rem;
     }
 
-    .borderwave {
-        width: 100%;
-        height: 7rem;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
     }
+    img{
+        width: 8rem;
+    }    
 </style>
