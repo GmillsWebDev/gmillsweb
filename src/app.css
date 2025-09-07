@@ -1,18 +1,85 @@
 @import 'tailwindcss';
 
 :root{
-    --colour-background: #00052b;
-    --colour-text: #e5e7eb;
+    --colour-background: #000420;
     --colour-primary: #83c65e;
     --colour-secondary: #215e58;
     --colour-accent: #1a4d29;
     --colour-highlight: #b1d88a;
     --colour-shadow: #173b22;
 
+    --colour-white: #e5e7eb;
+    --colour-black: #111827;
+
+    --colour-light-grey: #d1d5db;
+    --colour-grey: #6b7280;
+    --colour-dark-grey: #374151;
 
 }
 
 body{
     background-color: var(--colour-background);
-    color: var(--colour-text);
+    color: var(--colour-white);
+}
+
+.container{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.container-full{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+p, a, li, span, div{
+    color: var(--colour-white);
+    font-family: "Fira Code", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+a{
+    text-decoration: underline;
+    &:hover{
+        color: var(--colour-primary);
+    }
+    
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--colour-primary);
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+h2{
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+h3{
+    font-size: 1.875rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+h4{
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
 }
