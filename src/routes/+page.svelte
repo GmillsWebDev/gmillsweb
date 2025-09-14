@@ -2,6 +2,7 @@
   import LightWaves from "$lib/components/LightWaves.svelte";
   import IconCard from "$lib/components/IconCard.svelte";
   import ImgScroller from "$lib/components/ImgScroller.svelte";
+  import PriceCard from "$lib/components/PriceCard.svelte";
   import { services } from "$lib/scripts/services.js";
   import img from "$lib/assets/images/mobile.webp"
 </script>
@@ -44,24 +45,23 @@
 </LightWaves>
 <div id="Prices" class="container">
     <h2>Prices</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio
-    alias. Fuga aliquid nemo ut possimus numquam aperiam laudantium nobis
-    tenetur rerum eaque, vero eveniet natus eos. Architecto, excepturi
-    recusandae.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio
-    alias. Fuga aliquid nemo ut possimus numquam aperiam laudantium nobis
-    tenetur rerum eaque, vero eveniet natus eos. Architecto, excepturi
-    recusandae.
-  </p>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, distinctio
-    alias. Fuga aliquid nemo ut possimus numquam aperiam laudantium nobis
-    tenetur rerum eaque, vero eveniet natus eos. Architecto, excepturi
-    recusandae.
-  </p>
+    <div class="grid">
+      <PriceCard
+        title="Personal"
+        price="100"
+        features={["1-2 Pages"]}
+      />
+      <PriceCard
+        title="Small business"
+        price="200"
+        features={["3-5 Pages","Monthly analytics", "Contact form"]}
+      />
+      <PriceCard
+        title="Enterprise"
+        price="300"
+        features={["6+ Pages", "Monthly analytics", "Contact form", "User analysis"]}
+      />
+</div>
 </div>
 
 <style>
@@ -85,6 +85,14 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  #Prices {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
   }
