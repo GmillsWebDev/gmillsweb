@@ -1,13 +1,22 @@
 <script>
-    export let price;
+    export let price = "";
     export let title;
     export let features = [];
+    export let custom = false;
 </script>
 
 <div class="card">
     <h3>{title}</h3>
-    <p class="price"><span>from</span><br>£{price}<span>/mo</span></p>
-    <ul>
+    {#if custom}
+        <p class="price">Custom</p>
+        <ul>
+        {#each features as feature}
+            <li>{feature}</li>
+        {/each}
+    </ul>
+    {:else}
+        <p class="price"><span>from</span>£{price}<span>/month</span></p>
+        <ul>
         <li>Hosting</li>
         <li>SSL Certificate</li>
         <li>Domain<sup>*</sup></li>
@@ -16,6 +25,7 @@
             <li>{feature}</li>
         {/each}
     </ul>
+    {/if}
 </div>
 
 <style>
@@ -36,6 +46,7 @@
 
     h3 {
         color: var(--colour-secondary);
+        margin-bottom: 2rem;
     }
 
     .price {

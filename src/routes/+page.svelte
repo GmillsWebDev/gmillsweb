@@ -61,8 +61,18 @@
         price="300"
         features={["6+ Pages", "Monthly analytics", "Contact form", "User analysis"]}
       />
+      <PriceCard
+      custom={true}
+        title="Take away"
+        features={["Bespoke, mobile optimised solution for self hosting."]}
+      />
+  </div>
 </div>
-</div>
+<LightWaves>
+  <div id="Process" class="container">
+    <h2>The Process</h2>
+  </div>
+</LightWaves>
 
 <style>
 
