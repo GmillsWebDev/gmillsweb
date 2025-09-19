@@ -50,18 +50,19 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 600;
     font-style: normal;
     font-variation-settings: "wdth" 100;
+    margin-bottom: 1.5em;
 
 }
 
 h1{
     font-size: 4rem;
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 2.5rem;
 }
 h2{
     font-size: 2.75rem;
     line-height: 1;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 h3{
     font-size: 1.875rem;
@@ -80,6 +81,7 @@ h4{
 
 .container{
     max-width: 1400px;
+    width: calc(100% - 4rem);
     margin-left: auto;
     margin-right: auto;
     padding: 2rem 0;

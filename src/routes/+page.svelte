@@ -4,6 +4,7 @@
   import ImgScroller from "$lib/components/ImgScroller.svelte";
   import PriceCard from "$lib/components/PriceCard.svelte";
   import { services } from "$lib/scripts/services.js";
+  import { process } from "$lib/scripts/process.js";
   import img from "$lib/assets/images/mobile.webp"
 </script>
 
@@ -71,6 +72,11 @@
 <LightWaves>
   <div id="Process" class="container">
     <h2>The Process</h2>
+    <div class="grid">
+      {#each process as process}
+        <IconCard icon={process.icon} title={process.title} description={process.description} />
+      {/each}
+    </div>
   </div>
 </LightWaves>
 
@@ -104,6 +110,24 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+    }
+  }
+
+  #Process {
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+
+      @media screen and (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media screen and (max-width: 750px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media screen and (max-width: 450px) {
+        grid-template-columns: 1fr;
+      }
     }
   }
 </style>
