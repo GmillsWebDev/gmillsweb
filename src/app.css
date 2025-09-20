@@ -35,6 +35,26 @@ p, a, li, span, div{
     font-style: normal;
 }
 
+p{
+    margin-bottom: 1.2em;
+}
+
+ul, ol{
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
+    li{
+        margin-bottom: 1em;
+    }
+}
+
+ul li{
+    list-style-type: disc;
+}
+
+ol li{
+    list-style-type: decimal;
+}
+
 a{
     text-decoration: underline;
     &:hover{

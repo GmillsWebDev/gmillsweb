@@ -25,7 +25,9 @@
     </div>
     </div>
     <div class="logo">
-        <img src={logo} alt="GMills Web Development logo" />
+        <a href="/">
+            <img src={logo} alt="GMills Web Development logo" />
+        </a>
     </div>
 </div>
 </div>
