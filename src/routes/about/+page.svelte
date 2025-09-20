@@ -3,6 +3,9 @@
   import LightWaves from "$lib/components/LightWaves.svelte";
 
   import threeScreens from '$lib/assets/images/img_threeScreens.jpg?enhanced'
+  import consult from '$lib/assets/images/vec_consult.svg'
+  import design from '$lib/assets/images/vec_design.svg'
+  import code from '$lib/assets/images/vec_code.svg'
 </script>
 
 <Hero
@@ -72,6 +75,35 @@
     <enhanced:img src={threeScreens} alt="Three screens showing background code" />
   </div>
 </div>
+<div id="Process2">
+    <div class="container">
+        <h2>The Process</h2>
+    </div>
+    <div class="container">
+        <div><p>It all begins with a discovery session where we get to know your goals, brand story and audience. By asking the right questions and reviewing any existing assets, we shape a clear project brief, timetable and set of success metrics that guide the entire build.</p></div>
+        <div>
+            <div class="circle">
+                <img class="processImg" src={consult} alt="Illustration of a person consulting with another person" />
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <div class="circle">
+                <img class="processImg" src={design} alt="Illustration of a person consulting with another person" />
+            </div>
+        </div>
+        <div><p>Next, we turn ideas into visuals. Starting with low-fidelity wireframes, we map out user flows and page layouts before crafting high-fidelity mockups that bring your brand to life. You’ll explore a clickable prototype, share feedback, and watch us refine typography, imagery and interactions until everything feels just right.</p></div>
+    </div>
+    <div class="container">
+        <div><p>Once the design’s locked down, our developers write clean, semantic HTML, CSS and JavaScript using the right framework for your project. Every component is built with performance, scalability and accessibility in mind, so your site not only looks great but also loads fast and adapts as your needs evolve.</p></div>
+        <div>
+            <div class="circle">
+                <img class="processImg" src={code} alt="Illustration of a person consulting with another person" />
+            </div>
+        </div>
+    </div>
+</div>
 
 <style>
     .container {
@@ -83,5 +115,37 @@
 
     img{
         border-radius: 0.5rem;
+    }
+
+    .circle{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: var(--colour-primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        position: relative;
+        overflow: visible;
+        z-index: 2;
+        &::before{
+            content:'';
+            position: relative;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background: var(--colour-secondary);
+            top: -10px;
+            right: -10px;
+            z-index: 0;
+        }
+    }
+
+    img.processImg{
+        transform: scale(1.5);
+        position: absolute;
+        right: -2rem;
+        z-index: 3;
     }
 </style>
