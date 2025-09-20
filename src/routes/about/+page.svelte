@@ -1,6 +1,8 @@
 <script>
   import Hero from "$lib/components/Hero.svelte";
   import LightWaves from "$lib/components/LightWaves.svelte";
+
+  import threeScreens from '$lib/assets/images/img_threeScreens.jpg?enhanced'
 </script>
 
 <Hero
@@ -12,7 +14,7 @@
   variant="primary"
 />
 <div id="About" class="container">
-  <h2>About Us</h2>
+  <div><h2>About Us</h2>
   <p>
     GMillsWeb is a web development studio based in Chichester, specialising in
     clean, responsive websites built with modern frameworks. We help businesses, creatives, and independent professionals
@@ -23,13 +25,20 @@
     aesthetic—think intuitive layouts, modular design systems, and a touch of
     sea breeze. Every site is crafted to perform beautifully across devices,
     with SEO, accessibility, and speed baked in from the start.
-  </p>
+  </p></div>
+  <div>
+    <enhanced:img src={threeScreens} alt="Three screens showing background code" />
+  </div>
 </div>
 
 
 <LightWaves>
     <div id="What" class="container">
-    <h2>Our Services</h2>
+        <div>
+    <enhanced:img src={threeScreens} alt="Three screens showing background code" />
+  </div>
+
+    <div><h2>Our Services</h2>
     <p>We offer a full range of front-end and digital services to help your brand thrive online:</p>
     <ul>
         <li><strong>Web design & development</strong> – From wireframes to deployment, we build scalable websites.
@@ -44,12 +53,12 @@
 </li>
         <li><strong>Ongoing support & maintenance</strong> – Regular updates, security patches, and performance monitoring to keep your site running smoothly.
 </li>
-    </ul>
+    </ul></div>
 </div>
 </LightWaves>
 
 <div id="Process" class="container">
-    <h2>Our Process</h2>
+    <div><h2>Our Process</h2>
     <p>We break every project into five key stages—consultation, design, development, testing and deployment—so you always know what’s happening and why. From our very first chat to the moment your site goes live, we keep things transparent, collaborative and focused on delivering real results.</p>
 
     <ol>
@@ -58,5 +67,21 @@
        <li>Once the design’s locked down, our developers write clean, semantic HTML, CSS and JavaScript using the right framework for your project. Every component is built with performance, scalability and accessibility in mind, so your site not only looks great but also loads fast and adapts as your needs evolve.</li>
        <li>As we approach completion, we run both automated and manual testing across browsers and devices, audit Core Web Vitals and check against WCAG guidelines. We’ll squash any bugs, polish animations and ensure every interaction is rock-solid before giving you a final walkthrough</li>
        <li>When you’re happy, we configure your hosting environment—SSL certificates, CDN setup, DNS configuration and domain all handled for you—and then push your site live. But we don’t stop there: we keep an eye on performance metrics, analyse user behaviour and offer ongoing maintenance, so your digital presence stays sharp long after launch.</li> 
-    </ol>
+    </ol></div>
+    <div>
+    <enhanced:img src={threeScreens} alt="Three screens showing background code" />
+  </div>
 </div>
+
+<style>
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 4rem;
+        align-items: center;
+    }
+
+    img{
+        border-radius: 0.5rem;
+    }
+</style>

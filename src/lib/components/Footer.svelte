@@ -19,8 +19,8 @@
     <div class="links">
         <p>© {year} - G Mills Web</p>
     <div class="footer-links">
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-and-conditions">Terms & Conditions</a>
+        <!-- <a href="/privacy-policy">Privacy Policy</a>
+        <a href="/terms-and-conditions">Terms & Conditions</a> -->
         <a href="/contact">Contact</a>
     </div>
     </div>

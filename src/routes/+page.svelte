@@ -65,7 +65,7 @@
       <PriceCard
       custom={true}
         title="Take away"
-        features={["Bespoke, mobile optimised solution for self hosting."]}
+        features={["Bespoke, mobile optimised solution for self hosting. All files will be packaged up and provided ready to be dropped into your own hosting solution."]}
       />
   </div>
 </div>

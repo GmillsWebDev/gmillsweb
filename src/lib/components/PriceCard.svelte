@@ -19,7 +19,6 @@
         <ul>
         <li>Hosting</li>
         <li>SSL Certificate</li>
-        <li>Domain<sup>*</sup></li>
         <li>Support</li>
         {#each features as feature}
             <li>{feature}</li>
@@ -61,12 +60,12 @@
     }
 
     ul {
-        list-style-type: none;
         padding: 0;
         margin: 1rem 0 0 0;
     }
 
     li {
+        list-style-type: none;
         margin: 0.5rem 0;
         color: var(--colour-black);
         font-size: 1rem;
