@@ -20,25 +20,24 @@
     .btn.primary {
         background-color: var(--colour-primary);
         border: 1px solid var(--colour-primary);
-        color: var(--colour-white);
-    }
-
-    .btn.primary:hover {
-        background-color: var(--colour-secondary);
-        color: var(--colour-black);
+        color: var(--colour-background);
+        &:hover{
+            background-color: var(--colour-background);
+            color: var(--colour-primary);
+        }
     }
 
     .btn.secondary {
-        background-color: var(--colour-accent);
-        color: var(--colour-black);
-        border: 1px solid var(--colour-accent);
-    }
-
-    .btn.secondary:hover {
         background-color: var(--colour-secondary);
-        color: var(--colour-black);
+        color: var(--colour-white);
+        border: 1px solid var(--colour-secondary);
+        &:hover {
+        background-color: var(--colour-background);
+        color: var(--colour-white);
         border: 1px solid var(--colour-secondary);
     }
+    }
+
 
     @media screen and (max-width: 450px) {
         .btn {

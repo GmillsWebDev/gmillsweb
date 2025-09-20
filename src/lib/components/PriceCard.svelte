@@ -15,7 +15,7 @@
         {/each}
     </ul>
     {:else}
-        <p class="price"><span>from</span>£{price}<span>/month</span></p>
+        <p class="price"><span>from </span> £{price}<span>/month</span></p>
         <ul>
         <li>Hosting</li>
         <li>SSL Certificate</li>
