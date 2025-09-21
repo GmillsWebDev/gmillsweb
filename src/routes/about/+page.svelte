@@ -3,6 +3,7 @@
   import LightWaves from "$lib/components/LightWaves.svelte";
 
   import threeScreens from "$lib/assets/images/img_threeScreens.jpg?enhanced";
+  import aboutServices from "$lib/assets/images/img_aboutServices.jpg?enhanced";
   import {processImg} from "$lib/scripts/imgBank.js";
 </script>
 
@@ -40,9 +41,9 @@
 
 <LightWaves>
   <div id="What" class="container">
-    <div>
+    <div class="imgContainer">
       <enhanced:img
-        src={threeScreens}
+        src={aboutServices}
         alt="Three screens showing background code"
       />
     </div>
@@ -269,11 +270,15 @@
     }
   }
 
-  img.processImg {
-    transform: scale(1.5);
-    position: absolute;
-    /* right: -2rem; */
-    z-index: 3;
+  #What{
+    .imgContainer{
+        height: calc(100% - 6rem);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+    }
   }
 
   #Process{
@@ -283,6 +288,13 @@
         justify-content: center;
         gap: 2rem;
     }
+
+     img.processImg {
+    transform: scale(1.5);
+    position: absolute;
+    /* right: -2rem; */
+    z-index: 3;
+  }
     @media screen and (max-width: 768px) {
         .container{
             flex-direction: column;
