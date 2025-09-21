@@ -4,6 +4,7 @@ import { onMount, onDestroy } from 'svelte';
 
   export let images = [];
   export let direction = 'down'; // 'down' or 'up'
+  export let hide ="";
 
   let scrollPos = 0;
   let interval;
@@ -79,7 +80,7 @@ import { onMount, onDestroy } from 'svelte';
   });
 </script>
 
-<div class="img-scroller-container">
+<div class="img-scroller-container {hide}">
   <div class="img-scroller" bind:this={scroller}>
     {#each scrollerImages as img, i}
       <div class="img-pane">
@@ -98,6 +99,7 @@ import { onMount, onDestroy } from 'svelte';
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 8;
   &::before, &::after{
     content:"";
     position: absolute; 
@@ -123,6 +125,9 @@ import { onMount, onDestroy } from 'svelte';
   display: flex;
   flex-direction: column;
   transition: transform 0.1s linear;
+  @media screen and (max-width: 768px) {
+    left: 25%;
+  }
 }
 .img-pane {
   width: auto;

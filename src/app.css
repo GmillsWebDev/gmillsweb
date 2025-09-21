@@ -131,3 +131,18 @@ h4{
         }
     }
 }
+
+.hide{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .hideOnTablet{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 450px) {
+    .hideOnMobile{
+        display: none !important;
+    }
+}

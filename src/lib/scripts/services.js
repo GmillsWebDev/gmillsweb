@@ -18,7 +18,7 @@ export const services = [
     {
         icon: "",
         title: "Accessibility (a11y)",
-        description: "Ensuring your web applications are usable by everyone.",
+        description: "Ensuring your web applications are usable by everyone by meeting WCAG guidelines.",
     },
     {
         icon: "",

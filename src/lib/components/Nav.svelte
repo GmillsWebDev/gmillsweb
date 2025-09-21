@@ -164,8 +164,8 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    align-items: flex-end;
-    top: 61px;
+    align-items: flex-start;
+    top: 7rem;
     right: 0;
     box-shadow: -10px 11px 11px rgba(23, 59, 34, 0.4);
     width: fit-content;
@@ -177,7 +177,7 @@
     }
 
     .navbar__link {
-      padding: 1rem;
+      padding: 0.5rem 0 0.1rem 0;
     }
   }
 </style>

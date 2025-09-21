@@ -6,6 +6,10 @@
   import aboutServices from "$lib/assets/images/img_aboutServices.jpg?enhanced";
   import {processImg} from "$lib/scripts/imgBank.js";
 </script>
+<svelte:head>
+    <title>GMillsWeb | About</title>
+    <meta name="description" content="Learn more about GMillsWeb, a Chichester-based web development studio specialising in clean, responsive websites built with modern frameworks. Discover our services, process, and commitment to creating fast, accessible digital experiences." />
+</svelte:head>
 
 <Hero
   header="Modern websites, Made to perform"
