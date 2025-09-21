@@ -1,5 +1,13 @@
 @import 'tailwindcss';
 
+/*Breakpoints, for reference only
+XL - 1280px +
+LG - 992px to 1279px
+MD - 768px to 991px
+SM - 577px to 767px
+XS - 0px to 576px
+*/
+
 :root{
     --colour-background: #000420;
     --colour-primary: #83c65e;
