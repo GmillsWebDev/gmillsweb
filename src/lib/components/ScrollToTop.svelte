@@ -1,0 +1,73 @@
+
+<!-- Scroll to Top Button for use in layout -->
+<script>
+    import { onMount, onDestroy } from 'svelte';
+    
+    let showButton = false;
+    let isBrowser = typeof window !== 'undefined';
+
+    function handleScroll() {
+    showButton = window.scrollY > (window.innerHeight * 1);
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    onMount(() => {
+        if (isBrowser) {
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Check initial scroll position
+        }
+    });
+
+    onDestroy(() => {
+        if (isBrowser) {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    });
+</script>
+
+{#if showButton}
+    <div 
+        tabindex="0"
+        on:click={scrollToTop}
+        on:keydown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            scrollToTop();
+        }
+    }}
+        role="button"
+        aria-label="Scroll to top of page"
+    >
+        Top
+    </div>
+{/if}
+
+<style>
+    div {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: var(--colour-secondary);
+        color: white;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: background 0.3s, transform 0.3s;
+    }
+    div:hover {
+        background: var(--colour-accent);
+        transform: scale(1.1);
+    }
+
+</style>

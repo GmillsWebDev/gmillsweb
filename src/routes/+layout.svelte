@@ -2,6 +2,7 @@
 <script>
 	import Nav from '$lib/components/Nav.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import '../app.css';
 </script>
 <svelte:head>
@@ -26,3 +27,4 @@
 
 <slot />
 <Footer />
+<ScrollToTop />
