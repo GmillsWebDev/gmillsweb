@@ -64,6 +64,7 @@
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         transition: background 0.3s, transform 0.3s;
+        z-index: 100;
     }
     div:hover {
         background: var(--colour-accent);
