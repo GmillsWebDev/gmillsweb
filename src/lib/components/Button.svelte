@@ -38,6 +38,16 @@
     }
     }
 
+    .btn.tertiary {
+        background-color: var(--colour-background);
+        color: var(--colour-white);
+        border: 1px solid var(--colour-background);
+        &:hover {
+            background-color: var(--colour-white);
+            color: var(--colour-background);
+        }
+    }
+
 
     @media screen and (max-width: 450px) {
         .btn {

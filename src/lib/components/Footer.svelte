@@ -1,6 +1,7 @@
 <script>
         let year = new Date().getFullYear();
         import logo from "$lib/assets/images/branding/GMW_Logo.webp";
+        import ContactForm from "$lib/components/ContactForm.svelte";
 </script>
 
 <footer>
@@ -17,6 +18,9 @@
 <div class="container-full footer">
 <div class="container">
     <div class="links">
+        <a href="/">
+            <img class="logo" src={logo} alt="GMills Web Development logo" />
+        </a>
         <p>© {year} - G Mills Web</p>
     <div class="footer-links">
         <!-- <a href="/privacy-policy">Privacy Policy</a>
@@ -24,10 +28,8 @@
         <a href="/contact">Contact</a>
     </div>
     </div>
-    <div class="logo">
-        <a href="/">
-            <img src={logo} alt="GMills Web Development logo" />
-        </a>
+    <div class="contact">
+        <ContactForm />
     </div>
 </div>
 </div>
@@ -40,8 +42,10 @@
     }
 
     .container{
-        display: flex;
-        justify-content: space-between;
+        /* display: flex;
+        justify-content: space-between; */
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
         padding: 1rem 0;
     }
