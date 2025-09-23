@@ -1,11 +1,13 @@
 // src/routes/api/contact/+server.js
 import { json } from '@sveltejs/kit';
-import fetch from 'node-fetch'; // in Node runtimes this may be global
+import { env } from '$env/dynamic/private';
 
-const BREVO_API_KEY = process.env.BREVO_API_KEY;
-const FROM_EMAIL = process.env.BREVO_FROM_EMAIL;
-const FROM_NAME = process.env.BREVO_FROM_NAME || 'GMillsWeb';
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL;
+//import fetch from 'node-fetch'; // in Node runtimes this may be global
+
+const BREVO_API_KEY = env.BREVO_API_KEY;
+const FROM_EMAIL = env.BREVO_FROM_EMAIL;
+const FROM_NAME = env.BREVO_FROM_NAME || 'GMillsWeb';
+const TO_EMAIL = env.CONTACT_TO_EMAIL;
 
 function validate(body) {
   if (!body) return 'Missing payload';
@@ -17,6 +19,14 @@ function validate(body) {
   return null;
 }
 
+export async function GET() {
+  return new Response(
+    JSON.stringify({ message: 'This endpoint accepts POST requests only. Use POST to submit the contact form.' }),
+    { status: 405, headers: { 'Content-Type': 'application/json', 'Allow': 'POST' } }
+  );
+}
+
+
 export async function POST({ request }) {
   const body = await request.json();
   const err = validate(body);
@@ -25,35 +35,25 @@ export async function POST({ request }) {
   // Basic rate-limiting by IP (in-memory) — for production use Redis or similar
   // omitted here for brevity; implement as needed.
 
-  const emailPayload = {
+   const emailPayload = {
     sender: { email: FROM_EMAIL, name: FROM_NAME },
     to: [{ email: TO_EMAIL }],
     subject: `[Website] ${body.subject}`,
-    htmlContent: `
-      <h2>New contact form submission</h2>
-      <p><strong>Name:</strong> ${escapeHtml(body.name)}</p>
-      <p><strong>Email:</strong> ${escapeHtml(body.email)}</p>
-      <p><strong>Subject:</strong> ${escapeHtml(body.subject)}</p>
-      <p><strong>Message:</strong><br/>${nl2br(escapeHtml(body.message))}</p>
-    `,
-    textContent: `
-Name: ${body.name}
-Email: ${body.email}
-Subject: ${body.subject}
-
-${body.message}
-    `
+    htmlContent: `<p>${body.message}</p>`,
+    textContent: body.message
   };
+
 
   try {
     const res = await fetch('https://api.brevo.com/v3/smtp/email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'api-key': BREVO_API_KEY
-      },
-      body: JSON.stringify(emailPayload)
-    });
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'api-key': BREVO_API_KEY
+    },
+    body: JSON.stringify(emailPayload)
+  });
+
 
     if (!res.ok) {
       const errText = await res.text();
