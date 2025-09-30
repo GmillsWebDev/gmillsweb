@@ -13,11 +13,12 @@
       message: form.get('message')
     };
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body)
-    });
+    const res = await fetch('/.netlify/functions/contact', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(body)
+});
+
 
     if (res.ok) status.set('sent');
     else status.set('error');
