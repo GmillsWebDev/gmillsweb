@@ -27,6 +27,7 @@
       communication, proactive support and scalable solutions that grow with
       your business.
     </p>
+    <Button content="Get in Touch" linkUrl="/#contactForm" variant="secondary" />
   </div>
   <div class="scroller">
     <ImgScroller hide={"hideOnMobile"} images={[img, img, img, img]} direction="down" />
