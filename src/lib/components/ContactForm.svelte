@@ -24,6 +24,7 @@
   }
 </script>
 
+
 <div class="contactForm">
   <h2>Get in touch</h2>
   <form id="contactForm" on:submit|preventDefault={handleSubmit}>
