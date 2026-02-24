@@ -60,32 +60,32 @@
 
     <div class="container" id="Testimonials">
         <div class="carousel" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-  <button class="carousel__button carousel__button--prev" on:click={prevTestimonial} aria-label="Previous testimonial">
+  <button class="carouselButton carouselButtonPrev" on:click={prevTestimonial} aria-label="Previous testimonial">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M15 19l-7-7 7-7" />
     </svg>
   </button>
 
-  <div class="carousel__content">
+  <div class="carouselContent">
     <div class="testimonial">
-      <div class="testimonial__quote">
+      <div class="testimonialQuote">
         "{testimonials[currentIndex].review}"
       </div>
-      <div class="testimonial__author">
-        <div class="testimonial__name">{testimonials[currentIndex].name}</div>
-        <div class="testimonial__title">{testimonials[currentIndex].jobTitle}</div>
+      <div class="testimonialAuthor">
+        <div class="testimonialName">{testimonials[currentIndex].name}</div>
+        <div class="testimonialTitle">{testimonials[currentIndex].jobTitle}</div>
       </div>
     </div>
   </div>
 
-  <button class="carousel__button carousel__button--next" on:click={nextTestimonial} aria-label="Next testimonial">
+  <button class="carouselButton carouselButtonNext" on:click={nextTestimonial} aria-label="Next testimonial">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M9 5l7 7-7 7" />
     </svg>
   </button>
 </div>
 
-<div class="carousel__indicators">
+<div class="carouselIndicators">
   {#each testimonials as _, index}
     <button
       class="indicator {index === currentIndex ? 'active' : ''}"
@@ -108,7 +108,7 @@
     position: relative;
   }
 
-  .carousel__button {
+  .carouselButton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,22 +117,23 @@
     background-color: var(--colour-primary);
     border: none;
     border-radius: 50%;
-    color: var(--colour-white);
+    color: var(--colour-background);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     flex-shrink: 0;
   }
 
-  .carousel__button:hover {
+  .carouselButton:hover {
     background-color: var(--colour-secondary);
+    color: var(--colour-white);
     transform: scale(1.1);
   }
 
-  .carousel__button:active {
+  .carouselButton:active {
     transform: scale(0.95);
   }
 
-  .carousel__content {
+  .carouselContent {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -145,7 +146,7 @@
     text-align: center;
   }
 
-  .testimonial__quote {
+  .testimonialQuote {
     font-size: 1.2rem;
     color: var(--colour-white);
     font-style: italic;
@@ -153,25 +154,25 @@
     line-height: 1.6;
   }
 
-  .testimonial__author {
+  .testimonialAuthor {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .testimonial__name {
+  .testimonialName {
     font-weight: bold;
     color: var(--colour-primary);
     font-size: 1rem;
   }
 
-  .testimonial__title {
+  .testimonialTitle {
     color: var(--colour-white);
     font-size: 0.9rem;
     opacity: 0.8;
   }
 
-  .carousel__indicators {
+  .carouselIndicators {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
@@ -198,7 +199,7 @@
       padding: 1.5rem;
     }
 
-    .carousel__button {
+    .carouselButton {
       width: 2.5rem;
       height: 2.5rem;
     }
