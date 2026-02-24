@@ -5,6 +5,7 @@
   import ImgScroller from "$lib/components/ImgScroller.svelte";
   import PriceCard from "$lib/components/PriceCard.svelte";
   import CtaBanner from "$lib/components/CtaBanner.svelte";
+  import Carousel from "$lib/components/Carousel.svelte";
   import { services } from "$lib/scripts/services.js";
   import { process } from "$lib/scripts/process.js";
   import img from "$lib/assets/images/mobile.webp";
@@ -76,7 +77,7 @@
     />
   </div>
   <div class="cta">
-    <Button content="Get Started" linkUrl="#Footer" />
+    <Button content="Get in touch" linkUrl="#Footer" />
   </div>
 </div>
 <LightWaves>
@@ -94,6 +95,7 @@
   </div>
 </LightWaves>
 <CtaBanner />
+<Carousel/>
 
 <style>
 
