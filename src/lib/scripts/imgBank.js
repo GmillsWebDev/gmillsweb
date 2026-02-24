@@ -28,3 +28,23 @@ export const processImg = {
     launch1,
     chart
 };
+
+// Dev icon reused from above
+import responsiveIcon from "$lib/assets/images/icons/responsive.svg";
+import peformanceIcon from "$lib/assets/images/icons/performance.svg";
+import accessibilityIcon from "$lib/assets/images/icons/accessibility.svg";
+import auditIcon from "$lib/assets/images/icons/clipboard.svg";
+import analyticsIcon from "$lib/assets/images/icons/analytics.svg";
+import maintenanceIcon from "$lib/assets/images/icons/maintenance.svg";
+import cmsIcon from "$lib/assets/images/icons/wordpress.svg";
+
+export const servicesIcon = {
+    developIcon,
+    responsiveIcon,
+    peformanceIcon,
+    accessibilityIcon,
+    auditIcon,
+    analyticsIcon,
+    maintenanceIcon,
+    cmsIcon
+}

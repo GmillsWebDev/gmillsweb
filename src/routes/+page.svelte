@@ -5,6 +5,7 @@
   import ImgScroller from "$lib/components/ImgScroller.svelte";
   import PriceCard from "$lib/components/PriceCard.svelte";
   import CtaBanner from "$lib/components/CtaBanner.svelte";
+  import Carousel from "$lib/components/Carousel.svelte";
   import { services } from "$lib/scripts/services.js";
   import { process } from "$lib/scripts/process.js";
   import img from "$lib/assets/images/mobile.webp";
@@ -27,7 +28,7 @@
       communication, proactive support and scalable solutions that grow with
       your business.
     </p>
-    <Button content="Get in Touch" linkUrl="/#contactForm" variant="secondary" />
+    <Button content="Get in Touch" linkUrl="/#Footer" variant="secondary" />
   </div>
   <div class="scroller">
     <ImgScroller hide={"hideOnMobile"} images={[img, img, img, img]} direction="down" />
@@ -43,7 +44,7 @@
     <div class="grid">
       {#each services as service}
         <!-- {service.icon} -->
-        <IconCard title={service.title} description={service.description} />
+        <IconCard icon={service.icon} title={service.title} description={service.description} />
       {/each}
     </div>
   </div>
@@ -51,10 +52,10 @@
 <div id="Prices" class="container">
   <h2>Prices</h2>
   <div class="grid">
-    <PriceCard title="Personal" price="100" features={["1-2 Pages"]} />
+    <PriceCard title="Personal" price="50" features={["1-2 Pages"]} />
     <PriceCard
       title="Small business"
-      price="200"
+      price="100"
       features={["3-5 Pages", "Monthly analytics", "Contact form"]}
     />
     <PriceCard
@@ -76,7 +77,7 @@
     />
   </div>
   <div class="cta">
-    <Button content="Get Started" linkUrl="/contact" />
+    <Button content="Get in touch" linkUrl="#Footer" />
   </div>
 </div>
 <LightWaves>
@@ -94,6 +95,7 @@
   </div>
 </LightWaves>
 <CtaBanner />
+<Carousel/>
 
 <style>
 

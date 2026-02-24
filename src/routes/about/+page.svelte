@@ -5,6 +5,7 @@
   import threeScreens from "$lib/assets/images/img_threeScreens.jpg?enhanced";
   import aboutServices from "$lib/assets/images/img_aboutServices.jpg?enhanced";
   import {processImg} from "$lib/scripts/imgBank.js";
+  
 </script>
 <svelte:head>
     <title>GMillsWeb | About</title>
@@ -16,7 +17,7 @@
   subheader="Scalable, SEO-ready sites optimised for speed—from initial design right through to deployment."
   button={true}
   content="Let's Chat"
-  linkUrl="/contact"
+  linkUrl="#Footer"
   variant="primary"
 />
 <div id="About" class="container">
