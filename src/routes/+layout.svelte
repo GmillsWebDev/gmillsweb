@@ -5,6 +5,7 @@
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import '../app.css';
 </script>
+
 <svelte:head>
 	<title>GMillsWeb - Modern, Responsive Websites</title>
 	<meta name="description" content="GMillsWeb is a web development studio based in Chichester, specialising in clean, responsive websites built with modern frameworks. We help businesses, creatives, and independent professionals create digital experiences that are fast, accessible, and easy to manage." />
