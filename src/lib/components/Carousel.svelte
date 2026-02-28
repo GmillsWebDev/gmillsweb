@@ -51,6 +51,14 @@
     isHovered = false;
   }
 
+  function handleKeyDown(event) {
+    if (event.key === "ArrowLeft") {
+      prevTestimonial();
+    } else if (event.key === "ArrowRight") {
+      nextTestimonial();
+    }
+  }
+
   onMount(() => {
     startAutoScroll();
     return () => stopAutoScroll();
@@ -59,18 +67,32 @@
 
 
     <div class="container" id="Testimonials">
-        <div class="carousel" on:mouseenter={handleMouseEnter} on:mouseleave={handleMouseLeave}>
-  <button class="carouselButton carouselButtonPrev" on:click={prevTestimonial} aria-label="Previous testimonial">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <div 
+          class="carousel" 
+          role="region"
+          aria-label="Testimonials carousel"
+          aria-live="polite" 
+          aria-atomic="true"
+          on:mouseenter={handleMouseEnter} 
+          on:mouseleave={handleMouseLeave}
+          on:keydown={handleKeyDown}
+          tabindex="0"
+        >
+  <button 
+    class="carouselButton carouselButtonPrev" 
+    on:click={prevTestimonial} 
+    aria-label="Previous testimonial"
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M15 19l-7-7 7-7" />
     </svg>
   </button>
 
   <div class="carouselContent">
     <div class="testimonial">
-      <div class="testimonialQuote">
+      <blockquote class="testimonialQuote">
         "{testimonials[currentIndex].review}"
-      </div>
+      </blockquote>
       <div class="testimonialAuthor">
         <div class="testimonialName">{testimonials[currentIndex].name}</div>
         <div class="testimonialTitle">{testimonials[currentIndex].jobTitle}</div>
@@ -78,20 +100,26 @@
     </div>
   </div>
 
-  <button class="carouselButton carouselButtonNext" on:click={nextTestimonial} aria-label="Next testimonial">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <button 
+    class="carouselButton carouselButtonNext" 
+    on:click={nextTestimonial} 
+    aria-label="Next testimonial"
+  >
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
       <path d="M9 5l7 7-7 7" />
     </svg>
   </button>
 </div>
 
-<div class="carouselIndicators">
+<div class="carouselIndicators" role="tablist" aria-label="Testimonials carousel pages">
   {#each testimonials as _, index}
     <button
+      role="tab"
       class="indicator {index === currentIndex ? 'active' : ''}"
       on:click={() => (currentIndex = index)}
-      aria-label="Go to testimonial {index + 1}"
-    />
+      aria-selected={index === currentIndex}
+      aria-label="Testimonial {index + 1} of {testimonials.length}"
+    ></button>
   {/each}
 </div>
     </div>
@@ -131,6 +159,11 @@
 
   .carouselButton:active {
     transform: scale(0.95);
+  }
+
+  .carouselButton:focus-visible {
+    outline: 3px solid var(--colour-secondary);
+    outline-offset: 2px;
   }
 
   .carouselContent {
@@ -191,6 +224,11 @@
 
   .indicator.active {
     background-color: var(--colour-primary);
+  }
+
+  .indicator:focus-visible {
+    outline: 2px solid var(--colour-secondary);
+    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {

@@ -89,4 +89,16 @@
   }
 }
 
+@media screen and (max-width:768px){
+  .hero {
+    min-height: 40vh;
+    /* border-bottom: 1px solid var(--colour-primary); */
+    .content {
+      text-align: center;
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
 </style>
