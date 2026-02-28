@@ -17,6 +17,8 @@
     { name: "About", href: "/about" },
     { name: "Services", href: "/#Services" },
     { name: "Testimonials", href: "/#Testimonials" },
+    { name: "Projects", href: "/projects" },
+    { name: "Contact", href: "/#Footer" },
   ];
 
   function toggleMenu() {
