@@ -2,6 +2,7 @@
 <!-- Scroll to Top Button for use in layout -->
 <script>
     import { onMount, onDestroy } from 'svelte';
+    import upArrow from '$lib/assets/images/icons/arrowIcon.svg';
     
     let showButton = false;
     let isBrowser = typeof window !== 'undefined';
@@ -44,15 +45,15 @@
         role="button"
         aria-label="Scroll to top of page"
     >
-        Top
+        <img src={upArrow} alt="Scroll to top" width="25" height="25" />
     </div>
 {/if}
 
 <style>
     div {
         position: fixed;
-        bottom: 2rem;
-        right: 2rem;
+        bottom: 4.5rem;
+        left: 1rem;
         background: var(--colour-secondary);
         color: white;
         width: 3rem;

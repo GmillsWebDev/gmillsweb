@@ -4,6 +4,9 @@
 	import Footer from '$lib/components/Footer.svelte';
 	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
 	import '../app.css';
+
+  // move analytics/diagnostics loading into the consent component
+  import CookieConsent from '$lib/components/CookieConsent.svelte';
 </script>
 
 <svelte:head>
@@ -25,6 +28,9 @@
   <meta name="twitter:image" content="https://www.gmillsweb.co.uk/favicon/preview-image.png" />
 </svelte:head>
 <Nav />
+
+<!-- cookie consent banner component -->
+<CookieConsent />
 
 <slot />
 <Footer />
