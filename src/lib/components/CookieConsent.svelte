@@ -108,9 +108,12 @@ gtag('config', 'G-QR8FCS580F');
 </script>
 
 {#if show}
-  <div class="cookie-banner" role="dialog" aria-live="polite">
+  <div class="cookieBanner" role="dialog" aria-live="polite">
     <p>
-      We use cookies for <strong>site analytics</strong> and a <strong> error diagnostics</strong> to allow us to provide a better user experience. You can choose which services may run on this site. for more information please see our <a href="/cookiePolicy" target="_blank" rel="noopener">cookie policy</a>.
+      We use cookies for <strong>site analytics</strong> and <strong>diagnostics</strong> 
+      to allow us to provide a better user experience. You can choose 
+      which services may run on this site. for more information please see our 
+      <a href="/cookiePolicy" target="_blank" rel="noopener">cookie policy</a>.
     </p>
 
     <div class="options">
@@ -120,7 +123,7 @@ gtag('config', 'G-QR8FCS580F');
       </label>
       <label>
         <input type="checkbox" bind:checked={consent.diagnostics} />
-        Diagnostics tool
+        Diagnostics
       </label>
     </div>
 
@@ -139,7 +142,7 @@ gtag('config', 'G-QR8FCS580F');
 {/if}
 
 <style>
-  .cookie-banner {
+  .cookieBanner {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -154,13 +157,13 @@ gtag('config', 'G-QR8FCS580F');
     font-size: 0.9rem;
   }
 
-  .cookie-banner p {
+  .cookieBanner p {
     max-width: 800px;
     text-align: center;
     margin: 0;
   }
 
-  .cookie-banner .options {
+  .cookieBanner .options {
     margin: 0.5rem 0;
     display: flex;
     gap: 1rem;
@@ -168,11 +171,11 @@ gtag('config', 'G-QR8FCS580F');
     justify-content: center;
   }
 
-  .cookie-banner .actions {
+  .cookieBanner .actions {
     margin-top: 0.5rem;
   }
 
-  .cookie-banner button {
+  .cookieBanner button {
     margin: 0 0.25rem;
     background: #fff;
     color: #222;
@@ -182,7 +185,7 @@ gtag('config', 'G-QR8FCS580F');
     border-radius: 4px;
   }
 
-  .cookie-banner button:hover {
+  .cookieBanner button:hover {
     opacity: 0.9;
   }
 

@@ -107,6 +107,23 @@
     }
 
     @media (max-width: 768px) {
+        .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .links {
+            margin-bottom: 1rem;
+        }
+         .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        img{
+            margin: 0 auto;
+        }
+    }
+    @media (max-width: 450px) {
         .contactWrapper {
             grid-template-columns: 1fr;
         }

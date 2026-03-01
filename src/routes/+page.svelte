@@ -124,6 +124,9 @@
       /* gap: 1rem; */
       height: 80vh;
       width: 100%;
+      @media screen and (max-width: 450px) {
+      display: none;
+    }
     }
   }
   #Services {
