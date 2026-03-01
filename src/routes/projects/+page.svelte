@@ -5,6 +5,7 @@ import ProjectBlock from "$lib/components/ProjectBlock.svelte";
 import fillingIn from "$lib/assets/images/projects/FillingInProject.webp";
 import regentTherapy from "$lib/assets/images/projects/RegentTherapyProject.webp";
 import treemenders from "$lib/assets/images/projects/TreemendersProject.webp";
+import BCHair from "$lib/assets/images/projects/BchProject.webp";
 
 let projects = [
     {
@@ -24,8 +25,14 @@ let projects = [
         imgUrl: regentTherapy,
         projectName: "Regent Therapy",
         projectDescription: `A wordpress site promoting a Southampton business offering soft tissue therapy and assistance for those living with long term and/or incurable conditions.
-        The client wanted the branding to blend seamelessly with their practice. The site acts as an information hub and antry point to their services. `,
+        The client wanted the branding to blend seamelessly with their practice. The site acts as an information hub and entry point to their services. `,
         projectUrl: "https://regent-therapy.co.uk/1/"
+    },
+    {
+        imgUrl: BCHair,
+        projectName: "Beth Chapple Hair",
+        projectDescription: `A Bootstrap site promoting a hair salon based in Petersfield. The client wanted a clean, modern design where she could show off her magic and guide her clients towards her online booking system. The site contains a gallery and services/price list.`,
+        projectUrl: "https://bethchapplehair.co.uk/"
     },
     // Add more projects here
 ]
