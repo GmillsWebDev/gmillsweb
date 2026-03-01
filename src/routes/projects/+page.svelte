@@ -40,7 +40,7 @@ let projects = [
 
 <Hero 
     header="Projects" 
-    subheader="A collection of my projects and works." 
+    subheader="A collection of my projects." 
     button  
     content="Lets talk" 
     linkUrl="#Footer" 

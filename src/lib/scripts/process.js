@@ -4,7 +4,7 @@ export const process = [
     {
         icon: processIcon.consultIcon,
         title: "Consultation",
-        description: "We start by understanding your goals, audience, and vision—laying the foundation for a focused, effective build.",
+        description: "We start by understanding your goals, audience, and vision, laying the foundation for a focused, effective build.",
     },
     {
         icon: processIcon.designIcon,
@@ -14,7 +14,7 @@ export const process = [
     {
         icon: processIcon.developIcon,
         title: "Development",
-        description: "We build clean, responsive code using modern frameworks—optimised for speed, accessibility, and scalability.",
+        description: "We build clean, responsive code using modern frameworks optimised for speed, accessibility, and scalability.",
     },
     {
         icon: processIcon.testIcon,
@@ -24,6 +24,6 @@ export const process = [
     {
         icon: processIcon.launchIcon,
         title: "Deployment",
-        description: "Once approved, your site goes live—securely hosted, SEO-ready, and primed for future growth and updates.",
+        description: "Once approved, your site goes live. Securely hosted, SEO ready, and primed for future growth and updates.",
     },
 ];

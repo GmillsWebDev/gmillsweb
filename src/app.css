@@ -103,6 +103,11 @@ h4{
     margin-bottom: 1rem;
 }
 
+::selection{
+    background-color: var(--colour-accent);
+    color: var(--colour-white);
+}
+
 .borderwave{
     width: 100%;
 }
