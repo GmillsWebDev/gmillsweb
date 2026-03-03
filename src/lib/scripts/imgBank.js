@@ -48,3 +48,18 @@ export const servicesIcon = {
     maintenanceIcon,
     cmsIcon
 }
+
+//Scroller Imnages
+import RegentMockup from "$lib/assets/images/projects/RegentTherapyMockup.webp";
+import RichardsonsMockup from "$lib/assets/images/projects/RichardsonsNyewoodMockup.webp";
+import BCHairMockup from "$lib/assets/images/projects/BCHairMockup.webp";
+import TreeMendersMockup from "$lib/assets/images/projects/TreeMendersMockup.webp";
+import FillingInMockup from "$lib/assets/images/projects/FillingInMockup.webp";
+
+export const scrollerImg = {
+    RegentMockup,
+    RichardsonsMockup,
+    BCHairMockup,
+    TreeMendersMockup,
+    FillingInMockup
+}

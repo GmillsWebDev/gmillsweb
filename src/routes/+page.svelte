@@ -8,7 +8,7 @@
   import Carousel from "$lib/components/Carousel.svelte";
   import { services } from "$lib/scripts/services.js";
   import { process } from "$lib/scripts/process.js";
-  import img from "$lib/assets/images/mobile.webp";
+  import {scrollerImg} from "$lib/scripts/imgBank.js";
 </script>
 <svelte:head>
   <title>GMillsWeb | Chichester Web Design & Development</title>
@@ -31,10 +31,23 @@
     <Button content="Get in Touch" linkUrl="/#Footer" variant="secondary" />
   </div>
   <div class="scroller">
-    <ImgScroller hide={"hideOnMobile"} images={[img, img, img, img]} direction="down" />
+    <ImgScroller hide={"hideOnMobile"} images={[
+      scrollerImg.RegentMockup,
+      scrollerImg.FillingInMockup,
+      scrollerImg.TreeMendersMockup,
+      scrollerImg.BCHairMockup,
+      scrollerImg.RichardsonsMockup,
+    ]} direction="down" />
     <!-- if viewport <768px, hide -->
 
-    <ImgScroller hide={"hideOnTablet"} images={[img, img, img, img]} direction="up" />
+    <ImgScroller hide={"hideOnTablet"} images={[
+      scrollerImg.BCHairMockup,
+      scrollerImg.RegentMockup,
+      scrollerImg.RichardsonsMockup,
+      scrollerImg.FillingInMockup,
+      scrollerImg.TreeMendersMockup,
+      
+    ]} direction="up" />
 
   </div>
 </div>
