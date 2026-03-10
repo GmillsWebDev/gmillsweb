@@ -1,10 +1,12 @@
 <script>
+        import { resolve } from "$app/paths";
         let year = new Date().getFullYear();
         // import ContactForm from "$lib/components/ContactForm.svelte";
         import logo from "$lib/assets/images/branding/GMW_Logo.webp";
         import phoneIcon from "$lib/assets/images/icons/phone.svg";
         import emailIcon from "$lib/assets/images/icons/email.svg";
         import whatsappIcon from "$lib/assets/images/icons/whatsapp.svg";
+        import externalIcon from "$lib/assets/images/icons/externalIconWhite.svg";
 </script>
 
 <footer id="Footer">
@@ -21,13 +23,15 @@
 <div class="container-full footer">
 <div class="container">
     <div class="links">
-        <a href="/">
+        <a href="{resolve('/')}">
             <img class="logo" src={logo} alt="GMills Web Development logo" />
         </a>
         <p>©{year} - G Mills Web</p>
-    <div class="footer-links">
-        <a href="/compliance/cookiePolicy">Cookie Policy</a>
-        <!-- <a href="/terms-and-conditions">Terms & Conditions</a> -->
+    <div class="footerLinks">
+        <a target="_blank" href="https://zohosecurepay.eu/books/gmillswebdev/">Customer Portal 
+        <img src={externalIcon} alt="External link" /></a>
+        <a href="{resolve('/compliance/cookiePolicy')}">Cookie Policy</a>
+        <!-- <a href="{resolve('/terms-and-conditions')}">Terms & Conditions</a> -->
     </div>
     </div>
     <div class="contact">
@@ -81,6 +85,19 @@
         gap: 1.5rem;
     }
 
+    .footerLinks {
+        display: flex;
+        flex-direction: column;
+        a{
+            display: inline-flex;
+        }
+        img{
+            height: 1.2rem;
+            width: auto;
+            margin-left: 0.5rem;
+        }
+    }
+
     .contactWrapper a {
         display: flex;
         flex-direction: column;
@@ -114,7 +131,7 @@
         .links {
             margin-bottom: 1rem;
         }
-         .footer-links {
+         .footerLinks {
             display: flex;
             justify-content: center;
             gap: 1rem;

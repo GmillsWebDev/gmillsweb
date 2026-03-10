@@ -31,7 +31,7 @@
     <Button content="Get in Touch" linkUrl="/#Footer" variant="secondary" />
   </div>
   <div class="scroller">
-    <ImgScroller hide={"hideOnMobile"} images={[
+    <ImgScroller hide="hideOnMobile" images={[
       scrollerImg.RegentMockup,
       scrollerImg.FillingInMockup,
       scrollerImg.TreeMendersMockup,
@@ -40,7 +40,7 @@
     ]} direction="down" />
     <!-- if viewport <768px, hide -->
 
-    <ImgScroller hide={"hideOnTablet"} images={[
+    <ImgScroller hide="hideOnTablet" images={[
       scrollerImg.BCHairMockup,
       scrollerImg.RegentMockup,
       scrollerImg.RichardsonsMockup,
@@ -55,7 +55,7 @@
   <div id="Services" class="container">
     <h2>Services</h2>
     <div class="grid">
-      {#each services as service}
+      {#each services as service (service.title)}
         <!-- {service.icon} -->
         <IconCard icon={service.icon} title={service.title} description={service.description} />
       {/each}
@@ -65,29 +65,21 @@
 <div id="Prices" class="container">
   <h2>Prices</h2>
   <div class="grid">
-    <PriceCard title="Personal" price="50" features={["1-2 Pages"]} />
-    <PriceCard
-      title="Small business"
-      price="100"
-      features={["3-5 Pages", "Monthly analytics", "Contact form"]}
-    />
-    <PriceCard
-      title="Enterprise"
-      price="300"
-      features={[
-        "6+ Pages",
-        "Monthly analytics",
-        "Contact form",
-        "User analysis",
-      ]}
-    />
-    <PriceCard
-      custom={true}
-      title="Take away"
-      features={[
-        "Bespoke, mobile optimised solution for self hosting. All files will be packaged up and provided ready to be dropped into your own hosting solution.",
-      ]}
-    />
+      <div class="card">
+        <h3>Basics</h3>
+        <p>Your business isn't a carbon copy of someone else's, so your website shouldn't be either. We price our work based on the unique requirements of each client to make sure you're getting exactly what you pay for. Whether you need a simple digital business card or a deep, multi-page site with a custom CMS, we’ll handle the heavy lifting.</p>
+        <p>If you'd like to spread the cost, we offer monthly payment options to keep things manageable. Let’s have a chat about what it is that you need and we’ll get a proposal over to you.</p>
+      </div>
+      <div class="card">
+        <h3>Hosting</h3>
+        <p>Our hosting packages start from £200 per year and are designed to give you total peace of mind. We take care of all the "behind-the-scenes" bits, including SSL certificates for security, regular backups, and routine maintenance to keep everything running like clockwork. Essentially, we handle the tech so you can focus on the important stuff, running your business.</p>
+        
+      </div>
+      <div class="card">
+        <h3>Extras</h3>
+        <p>We can also arrange extra domain names and setting up professional email accounts, provide deep dives into user analytics and accessibility overviews, we’ve got you covered. We'll make sure your site isn't just easy to find, but easy for everyone to use, too.</p>
+        
+      </div>
   </div>
   <div class="cta">
     <Button content="Get in touch" linkUrl="#Footer" />
@@ -97,7 +89,7 @@
   <div id="Process" class="container">
     <h2>The Process</h2>
     <div class="grid">
-      {#each process as process}
+      {#each process as process (process.title)}
         <IconCard
           icon={process.icon}
           title={process.title}
@@ -155,6 +147,28 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
+    }
+    .card {
+        background: var(--colour-white);
+        border: 1px solid var(--colour-lightgrey);
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        box-shadow: 5px 4px 6px rgba(131, 198, 94, 0.6);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        p{
+          color: var(--colour-black);
+        }
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(131, 198, 94, 0.2);
+    }
+
+    h3 {
+        color: var(--colour-secondary);
+        margin-bottom: 2rem;
     }
   }
 
