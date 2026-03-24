@@ -13,12 +13,12 @@
 
 // { name: "Services", href: "/services" },
   const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/#Services" },
-    { name: "Testimonials", href: "/#Testimonials" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "/#Footer" },
+    { name: "Home", label: "home", href: "/" },
+    { name: "About", label: "about", href: "/about" },
+    { name: "Services", label: "services", href: "/#Services" },
+    { name: "Testimonials", label: "testimonials", href: "/#Testimonials" },
+    { name: "Projects", label: "projects", href: "/projects" },
+    { name: "Contact", label: "contact", href: "/#Footer" },
   ];
 
   function toggleMenu() {
@@ -34,7 +34,7 @@
       </div>
     </a>
     <div class="navbar__links {menuOpen ? 'active' : ''}">
-      {#each links as link}
+      {#each links as link (link.href)}
         <a
           class="navbar__link {currentPath === link.href ? 'active' : ''}"
           href={link.href}

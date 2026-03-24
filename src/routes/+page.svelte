@@ -3,7 +3,7 @@
   import LightWaves from "$lib/components/LightWaves.svelte";
   import IconCard from "$lib/components/IconCard.svelte";
   import ImgScroller from "$lib/components/ImgScroller.svelte";
-  import PriceCard from "$lib/components/PriceCard.svelte";
+  //import PriceCard from "$lib/components/PriceCard.svelte";
   import CtaBanner from "$lib/components/CtaBanner.svelte";
   import Carousel from "$lib/components/Carousel.svelte";
   import { services } from "$lib/scripts/services.js";
