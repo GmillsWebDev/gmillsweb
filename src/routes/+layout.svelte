@@ -1,12 +1,16 @@
 
 <script>
-	import Nav from '$lib/components/Nav.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import ScrollToTop from '$lib/components/ScrollToTop.svelte';
-	import '../app.css';
+    import Nav from '$lib/components/Nav.svelte';
+    import Footer from '$lib/components/Footer.svelte';
+    import ScrollToTop from '$lib/components/ScrollToTop.svelte';
+    import '../app.css';
+    import CookieConsent from '$lib/components/CookieConsent.svelte';
+    import { afterNavigate } from '$app/navigation';
+    import { scrollToHashIfPresent } from '$lib/scripts/smoothScroll.js';
 
-  // move analytics/diagnostics loading into the consent component
-  import CookieConsent from '$lib/components/CookieConsent.svelte';
+    afterNavigate(() => {
+      scrollToHashIfPresent();
+    });
 </script>
 
 <svelte:head>

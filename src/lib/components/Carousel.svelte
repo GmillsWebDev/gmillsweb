@@ -219,7 +219,7 @@
   @media (max-width: 768px) {
     .carousel {
       gap: 1rem;
-      padding: 1.5rem;
+      padding: 1.5rem 0;
     }
 
     .carouselButton {
@@ -227,11 +227,11 @@
       height: 2.5rem;
     }
 
-    .carousel__content {
+    .carouselContent {
       min-height: 120px;
     }
 
-    .testimonial__quote {
+    .testimonialQuote {
       font-size: 1rem;
       margin-bottom: 1rem;
     }

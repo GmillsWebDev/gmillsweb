@@ -15,10 +15,11 @@
   const links = [
     { name: "Home", label: "home", href: "/" },
     { name: "About", label: "about", href: "/about" },
-    { name: "Services", label: "services", href: "/#Services" },
-    { name: "Testimonials", label: "testimonials", href: "/#Testimonials" },
+    // For in-page sections, use hash-only if on root, else /#Section
+    { name: "Services", label: "services", href: null, section: "Services" },
+    { name: "Testimonials", label: "testimonials", href: null, section: "Testimonials" },
     { name: "Projects", label: "projects", href: "/projects" },
-    { name: "Contact", label: "contact", href: "/#Footer" },
+    { name: "Contact", label: "contact", href: "#Footer" },
   ];
 
   function toggleMenu() {
@@ -34,17 +35,30 @@
       </div>
     </a>
     <div class="navbar__links {menuOpen ? 'active' : ''}">
-      {#each links as link (link.href)}
-        <a
-          class="navbar__link {currentPath === link.href ? 'active' : ''}"
-          href={link.href}
-          on:click={() => {
-            menuOpen = false;
-            currentPath = link.href;
-          }}
-        >
-          {link.name}
-        </a>
+      {#each links as link (link.name)}
+        {#if link.section}
+          <a
+            class="navbar__link"
+            href={currentPath === "/" ? `#${link.section}` : `/#${link.section}`}
+            on:click={() => {
+              menuOpen = false;
+              // Don't update currentPath for hash links
+            }}
+          >
+            {link.name}
+          </a>
+        {:else}
+          <a
+            class="navbar__link {currentPath === link.href ? 'active' : ''}"
+            href={link.href}
+            on:click={() => {
+              menuOpen = false;
+              currentPath = link.href;
+            }}
+          >
+            {link.name}
+          </a>
+        {/if}
       {/each}
     </div>
     <div

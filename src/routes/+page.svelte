@@ -63,7 +63,7 @@
   </div>
 </LightWaves>
 <div id="Prices" class="container">
-  <h2>Prices</h2>
+  <h2>Pricing</h2>
   <div class="grid">
       <div class="card">
         <h3>Basics</h3>
