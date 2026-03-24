@@ -1,27 +1,12 @@
 <script>
   import { onMount } from "svelte";
+  import { testimonials } from "$lib/scripts/testimonials.js";
 
   let currentIndex = 0;
   let isHovered = false;
   let autoScrollInterval;
 
-  export let testimonials = [
-    {
-      name: "John Smith",
-      jobTitle: "Marketing Manager",
-      review: "Excellent service and professional team. They delivered exactly what we needed on time."
-    },
-    {
-      name: "Sarah Johnson",
-      jobTitle: "Business Owner",
-      review: "Highly recommended! The team went above and beyond to ensure our website was perfect."
-    },
-    {
-      name: "Mike Chen",
-      jobTitle: "CEO",
-      review: "Outstanding work. They transformed our online presence and increased our conversions."
-    }
-  ];
+  
 
   function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
@@ -112,7 +97,7 @@
 </div>
 
 <div class="carouselIndicators" role="tablist" aria-label="Testimonials carousel pages">
-  {#each testimonials as _, index}
+  {#each testimonials as _, index (index)}
     <button
       role="tab"
       class="indicator {index === currentIndex ? 'active' : ''}"
