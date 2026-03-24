@@ -52,17 +52,23 @@
 
 
     <div class="container" id="Testimonials">
-        <div 
-          class="carousel" 
-          role="region"
-          aria-label="Testimonials carousel"
-          aria-live="polite" 
-          aria-atomic="true"
-          on:mouseenter={handleMouseEnter} 
-          on:mouseleave={handleMouseLeave}
-          on:keydown={handleKeyDown}
-          tabindex="0"
-        >
+      <span id="carousel-desc" class="sr-only">
+        Use left and right arrow keys to navigate testimonials. Use the indicators to jump to a testimonial.
+      </span>
+      <div 
+        class="carousel" 
+        role="region"
+        aria-label="Testimonials carousel"
+        aria-roledescription="carousel"
+        aria-describedby="carousel-desc"
+        aria-keyshortcuts="ArrowLeft ArrowRight"
+        aria-live="polite" 
+        aria-atomic="true"
+        on:mouseenter={handleMouseEnter} 
+        on:mouseleave={handleMouseLeave}
+        on:keydown={handleKeyDown}
+        tabindex="0"
+      >
   <button 
     class="carouselButton carouselButtonPrev" 
     on:click={prevTestimonial} 
@@ -110,6 +116,16 @@
     </div>
 
 <style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
   .carousel {
     display: flex;
     align-items: center;
